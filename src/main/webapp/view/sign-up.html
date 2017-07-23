@@ -1,0 +1,54 @@
+<md-content>
+    <form name="signup-form" data-ng-submit="signUpCtrl.submit()">
+        <md-content layout="column">
+            <md-content layout>
+                <md-card layout="row" layout-align="center center" md-colors="{'background': 'grey-A200'}" flex>
+                    <img src="../../img/L_de_lebflix.png" class="img-lebflix">
+                    <md-card-title layout-align="center center" flex>
+                        <span class="md-title">Sign Up to LebFlix!</span>
+                    </md-card-title>
+                </md-card>
+            </md-content>
+            <md-content layout>
+                <md-input-container flex>
+                    <md-icon>person</md-icon>
+                    <input id="name"
+                           placeholder="Name"
+                           data-ng-model="signUpCtrl.user.name"
+                           flex
+                           required/>
+                </md-input-container>
+            </md-content>
+            <md-content layout>
+                <md-input-container flex>
+                    <md-icon>email</md-icon>
+                    <input id="email"
+                           placeholder="Email"
+                           data-ng-model="signUpCtrl.user.email"
+                           flex
+                           required/>
+                </md-input-container>
+            </md-content>
+            <md-content layout>
+                <md-input-container flex>
+                    <md-icon>lock</md-icon>
+                    <input id="password"
+                           type="password"
+                           placeholder="Password"
+                           data-ng-model="signUpCtrl.user.password"
+                           flex
+                           required/>
+                </md-input-container>
+            </md-content>
+
+            <md-content layout layout-align="center center">
+                <md-button class="md-raised md-primary" type="submit">
+                    Sign up
+                </md-button>
+                <md-button class="md-raised md-warn" ui-sref="app.home">
+                    cancel
+                </md-button>
+            </md-content>
+        </md-content>
+    </form>
+</md-content>

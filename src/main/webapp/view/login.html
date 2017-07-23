@@ -1,0 +1,44 @@
+<md-content>
+    <form name="login-form" data-ng-submit="loginCtrl.submit()">
+        <md-content layout="column">
+            <md-content layout>
+                <md-card layout="row" layout-align="center center" md-colors="{'background': 'grey-A200'}" flex>
+                    <img src="../../img/L_de_lebflix.png" class="img-lebflix">
+                    <md-card-title layout-align="center center" flex>
+                        <span class="md-title">Login to access LebFlix!</span>
+                    </md-card-title>
+                </md-card>
+            </md-content>
+            <md-content layout>
+                <md-input-container flex>
+                    <md-icon>email</md-icon>
+                    <input id="email"
+                           placeholder="Email"
+                           data-ng-model="loginCtrl.user.email"
+                           flex
+                           required/>
+                </md-input-container>
+            </md-content>
+            <md-content layout>
+                <md-input-container flex>
+                    <md-icon>lock</md-icon>
+                    <input id="password"
+                           type="password"
+                           placeholder="Password"
+                           data-ng-model="loginCtrl.user.password"
+                           flex
+                           required/>
+                </md-input-container>
+            </md-content>
+
+            <md-content layout layout-align="center center">
+                <md-button class="md-raised md-primary" type="submit">
+                    Login
+                </md-button>
+                <md-button class="md-raised md-warn" ui-sref="app.home">
+                    cancel
+                </md-button>
+            </md-content>
+        </md-content>
+    </form>
+</md-content>

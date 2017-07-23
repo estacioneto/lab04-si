@@ -1,0 +1,13 @@
+<div layout-wrap>
+    <div layout="row" layout-align="center">
+        <div data-ng-repeat="seriesList in displayedSeries.series">
+            <div layout="column">
+                <div data-ng-repeat="singleSeries in seriesList" layout="column">
+                    <div data-series-card
+                         data-series="singleSeries"
+                         data-show-details="showDetails"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

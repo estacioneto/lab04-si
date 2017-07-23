@@ -1,0 +1,110 @@
+<md-dialog aria-label="Series Modal"
+           id="series-modal"
+           layout="column"
+           layout-align="center center">
+    <div layout="row" layout-wrap>
+        <!-- Poster -->
+        <img class="md-card-image poster-image"
+             data-ng-if="SeriesDialogCtrl.hasImagePoster()"
+             data-ng-src="{{SeriesDialogCtrl.series.Poster}}"
+             hide-sm
+             data-md-plain-image>
+        <!-- end Poster -->
+        <div layout="column">
+            <form name="seriesOpinion" ng-submit="SeriesDialogCtrl.saveSeries()">
+                <!-- Content -->
+                <md-dialog-content layout-padding layout="column" layout-align="start center">
+                    <!-- Title and Subtitle -->
+                    <div layout="row" layout-padding>
+                        <span class="md-headline text-center" data-ng-bind="SeriesDialogCtrl.getCardTitle()"></span>
+                        <span class="md-subhead text-center" data-ng-bind="SeriesDialogCtrl.getCardSubtitle()"></span>
+                    </div>
+                    <!-- end Title and Subtitle -->
+
+                    <div layout="column">
+                        <div layout="row" layout-align="center center">
+                            <div data-layout-padding layout="column">
+                            <span class="md-subhead text-center series-dialog-plot"
+                                  layout-padding>{{SeriesDialogCtrl.series.Plot}}</span>
+
+                                <md-card-title-text layout="row" layout-align="center" layout-padding>
+                                    <div layout="column" class="series-dialog-plot">
+                                        <span>Genre: {{SeriesDialogCtrl.series.Genre}}</span>
+                                        <span>Rated: {{SeriesDialogCtrl.series.Rated}}</span>
+                                        <span>Director: {{SeriesDialogCtrl.series.Director}}</span>
+                                        <span>Writer: {{SeriesDialogCtrl.series.Writer}}</span>
+                                    </div>
+                                    <div layout="column" class="series-dialog-plot">
+                                        <span>Writer: {{SeriesDialogCtrl.series.Writer}}</span>
+                                        <span>Language: {{SeriesDialogCtrl.series.Language}}</span>
+                                        <span>IMDb Rating: {{SeriesDialogCtrl.series.imdbRating}}</span>
+                                    </div>
+                                </md-card-title-text>
+                            </div>
+                        </div>
+                        <div layout="row">
+                            <md-input-container flex="20">
+                                <input id="season-input" placeholder="Season" type="number"
+                                       step="any"
+                                       name="season"
+                                       min="1"
+                                       ng-model="SeriesDialogCtrl.series.season"/>
+                                <div ng-messages="seriesOpinion.season.$error" multiple>
+                                    <div ng-message="min">
+                                        Season should be equal or more than 1.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container flex>
+                                <input id="last-episode-input" placeholder="Last Episode" type="text"
+                                       name="lastEpisode"
+                                       ng-model="SeriesDialogCtrl.series.lastEpisode"/>
+                            </md-input-container>
+                            <md-input-container flex="20">
+                                <input id="rating-input" placeholder="Rate" type="number"
+                                       step="any"
+                                       name="rate"
+                                       min="0" max="10"
+                                       ng-model="SeriesDialogCtrl.series.rate"/>
+                                <div ng-messages="seriesOpinion.rate.$error" multiple>
+                                    <div ng-message="min">
+                                        You should rate more than 0.
+                                    </div>
+                                    <div ng-message="max">
+                                        You should rate less than 10.
+                                    </div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                </md-dialog-content>
+                <span flex></span>
+                <md-dialog-actions layout="row" layout-align="end center">
+                    <md-input-container>
+                        <md-button type="submit"
+                                   ng-if="SeriesDialogCtrl.series.onProfile || SeriesDialogCtrl.series.onWatchlist">
+                            Update
+                        </md-button>
+                    </md-input-container>
+                    <md-input-container>
+                        <md-button ng-click="SeriesDialogCtrl.addToProfile()">Add to profile</md-button>
+                    </md-input-container>
+                    <md-input-container>
+                        <md-button ng-click="SeriesDialogCtrl.addToWatchlist()">Add to watchlist
+                        </md-button>
+                    </md-input-container>
+                    <md-input-container>
+                        <md-button class="md-accent md-icon-button"
+                                   ng-if="SeriesDialogCtrl.series.onProfile"
+                                   ng-click="SeriesDialogCtrl.removeFromProfile()">
+                            <md-icon>delete</md-icon>
+                            <md-tooltip md-direction="top">Delete from Profile</md-tooltip>
+                        </md-button>
+                    </md-input-container>
+                </md-dialog-actions>
+            </form>
+            <!-- end Actions -->
+        </div>
+        <!-- end Content -->
+    </div>
+</md-dialog>

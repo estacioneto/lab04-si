@@ -1,0 +1,33 @@
+<md-card layout="column" class="series-card">
+    <div data-ng-click="showDetailedSeries($event)">
+        <md-card-title data-ng-if="!hasImagePoster()">
+            <md-card-title-text>
+                <span class="md-headline text-center" data-ng-bind="getCardTitle()"></span>
+                <span class="md-subhead text-center" data-ng-bind="getCardSubtitle()"></span>
+            </md-card-title-text>
+        </md-card-title>
+        <div data-ng-if="hasImagePoster()" layout="column" data-layout-align="center center">
+            <img class="md-card-image"
+                 data-ng-src="{{series.Poster}}"
+                 data-md-plain-image>
+            <span class="md-subhead text-center" layout-padding data-ng-bind="getCardTitle()" flex></span>
+        </div>
+    </div>
+    <md-card-actions layout="column">
+        <div layout="row" layout-align="center center">
+            <md-input-container layout="column" flex>
+                <md-button ng-click="addToProfile()">Add to profile</md-button>
+                <md-button ng-if="showDetails"
+                        ng-click="addToWatchlist()">Add to watchlist
+                </md-button>
+            </md-input-container>
+            <md-input-container ng-if="series.onProfile && showDetails">
+                <md-button class="md-accent md-icon-button"
+                           ng-click="removeFromProfile()">
+                    <md-icon>delete</md-icon>
+                    <md-tooltip md-direction="top">Delete from Profile</md-tooltip>
+                </md-button>
+            </md-input-container>
+        </div>
+    </md-card-actions>
+</md-card>

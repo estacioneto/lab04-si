@@ -1,0 +1,83 @@
+<html lang="pt-br">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+
+  <title>LebFlix</title>
+  <base href="/"/>
+
+  <!-- fontes do Material Design -->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+  <link rel="application/font" href=fonts/fontawesome-webfont.ttf>
+  <link rel="application/font" href=fonts/fontawesome-webfont.woff>
+  <link rel="application/font" href=fonts/fontawesome-webfont.woff2>
+  <link rel="icon" href="img/lebflix_icon16x16.png">
+
+  <!-- build:css css/main.css -->
+  <!-- CSS Material design -->
+  <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css/bootstrap-material-design/bootstrap-material-design.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css/ripples/ripples.min.css">
+  <link rel="stylesheet" type="text/css" href="vendor/css/angular-material/angular-material.min.css">
+  
+  <link rel="stylesheet" href="vendor/css/font-awesome/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/mainStyle.css">
+  <!-- endbuild -->
+</head>
+
+<body data-ng-app="siApp" data-ng-strict-di>
+
+  <div id="content" data-ui-view></div>
+
+  <!-- build:js js/script.js -->
+
+  <!-- Lodash, Angular, JQuery and Bootstrap -->
+  <script src="vendor/js/lodash/lodash.min.js"></script>
+  <script src="vendor/js/angular/angular.min.js"></script>
+  <script src="vendor/js/angular-animate/angular-animate.min.js"></script>
+  <script src="vendor/js/angular-aria/angular-aria.min.js"></script>
+  <script src="vendor/js/angular-touch/angular-touch.min.js"></script>
+  <script src="vendor/js/angular-storage/angular-storage.min.js"></script>
+  <script src="vendor/js/angular-ui-router/angular-ui-router.js"></script>
+  <script src="vendor/js/angular-material/angular-material.min.js"></script>
+  <script src="vendor/js/angular-messages/angular-messages.min.js"></script>
+  <script src="vendor/js/jquery/jquery.min.js"></script>
+  <script src="vendor/js/ui-bootstrap-tpls/ui-bootstrap-tpls.js"></script>
+  <script src="vendor/js/bootstrap/bootstrap.min.js"></script>
+  <script src="vendor/js/md5/md5.min.js"></script>
+
+  <!-- Services -->
+  <script src="js/service/Modal.srv.js"></script>
+  <script src="js/service/Toast.srv.js"></script>
+  <script src="js/service/User.srv.js"></script>
+  <script src="js/service/Series.srv.js"></script>
+  <script src="js/service/Auth.srv.js"></script>
+
+  <!-- Directives -->
+  <script src="js/directive/MainToolbar.dir.js"></script>
+  <script src="js/directive/Search.dir.js"></script>
+  <script src="js/directive/series/SeriesListing.dir.js"></script>
+  <script src="js/directive/series/SeriesCard.dir.js"></script>
+
+  <!-- Controllers -->
+  <script src="js/controller/App.ctrl.js"></script>
+  <script src="js/controller/Home.ctrl.js"></script>
+  <script src="js/controller/Profile.ctrl.js"></script>
+  <script src="js/controller/Watchlist.ctrl.js"></script>
+  <script src="js/controller/SeriesDialog.ctrl.js"></script>
+  <script src="js/controller/SignUp.ctrl.js"></script>
+  <script src="js/controller/Initial.ctrl.js"></script>
+  <script src="js/controller/Login.ctrl.js"></script>
+
+  <!-- Routes -->
+  <script src="js/config.js"></script>
+  <script src="js/constants.js"></script>
+  <script src="js/authConfig.js"></script>
+  <!-- endbuild -->
+</body>
+
+</html>
