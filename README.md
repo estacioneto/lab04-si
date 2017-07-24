@@ -7,4 +7,4 @@ Na raiz do projeto, execute ```mvn spring-boot:run```.
 Abra o navegador (de preferência Google Chrome) e acesse `localhost:8080`
 
 # URL do Projeto
-https://lab04-si.herokuapp.com/
+https://lebflix.herokuapp.com/
